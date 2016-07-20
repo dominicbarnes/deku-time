@@ -1,8 +1,16 @@
 sudo: false
 language: node_js
 node_js:
-  - stable
+- stable
 install: npm update
 cache:
   directories:
-    - node_modules
+  - node_modules
+deploy:
+  provider: npm
+  email: dominic@dbarnes.info
+  api_key:
+    secure: Tzi1qyoBQe3s9sPbkrMfeCw3m0CRQtfh2+KYePhkCcCCdBeWP7nI5EPTJPHtTToS/iQnvW/LfBLSgpj9xfSBz3vgeyogkkU2D/ZecAV7q5VgjRMpZgHOB91u5xR5kczCa7CEWvGCqLcqMzofjCBxigrgvq81rexw1TDL/KH3+LmgTt242iY/KNDIl6SJ2tI0brfRAJ6mJfj+3ucEslZFODWC24WpApKrmb4JiYrEKFXrosxwgo54F9NVsBbpQK2HP3OGlhvDlScf1D3ispXv0t/AG6E659Wd8QzGJY1trnmQnN9ZvpTPWxmweWQxpn5gC1ddubYPaJWV4JkgULDRCqZt7Lo+ri0J1bLvPQaV7A/71YDAcW/I0cIP9wmW2utvf7u/YZH0eePrDLZxGRPxHfTB76jLeWgu+X+X4aWTlxeOvHlzKYytBflvMZKyRR5GIWDcCkaF+90k9gOYrT2ui1vkaZZeuTIm+FnHk/zaKQ58G+ScW1vqiGemsCSjo2scwwOcd4wTo14DAWvJDjv0YpceqbOW0qusXr4V/jIBGOna1QzJ5vLTyafG4hGLMQ8d9K2tCj/v65zLpAL6Sh19nuZS1eNQsETqV00TI4UCMtH2SB7UFv14OFORWc7H9orHX0gQoKn2DV/ckja9yRMPPlEIOhkGdLXXevIzRoohnYI=
+  on:
+    tags: true
+    repo: dominicbarnes/deku-time
