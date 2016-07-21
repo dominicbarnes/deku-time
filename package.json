@@ -33,6 +33,7 @@
     "mako-serve": "^0.13.6",
     "mako-stat": "^0.11.4",
     "mocha": "^2.5.3",
+    "phantomjs-prebuilt": "^2.1.7",
     "zuul": "^3.10.1"
   },
   "scripts": {
