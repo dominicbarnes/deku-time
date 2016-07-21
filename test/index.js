@@ -101,14 +101,15 @@ describe('<Time />', function () {
 
     describe('refresh', function () {
       it('should update the content on the refresh interval', function (done) {
-        const datetime = moment().subtract(44, 'seconds').toDate();
+        const datetime = moment().subtract(44, 'seconds').subtract(400, 'milliseconds').toDate();
 
         const app = mount(<Time datetime={datetime} from="now" refresh={100} />);
         assert.strictEqual(app.element.querySelector('time').innerHTML, 'a few seconds ago');
         setTimeout(() => {
           assert.strictEqual(app.element.querySelector('time').innerHTML, 'a minute ago');
+          app.unmount();
           done();
-        }, 750);
+        }, 150);
       });
     });
 
