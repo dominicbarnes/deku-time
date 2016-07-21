@@ -4,6 +4,7 @@
   "repository": "dominicbarnes/deku-time",
   "main": "lib/index.js",
   "dependencies": {
+    "chai": "^3.5.0",
     "magic-virtual-element": "^1.0.6",
     "moment": "^2.14.1"
   },
@@ -11,27 +12,37 @@
     "@dominicbarnes/eslint-config": "^1.0.0",
     "@dominicbarnes/eslint-config-browser": "^1.0.0",
     "@dominicbarnes/eslint-config-deku": "^1.1.0",
+    "@dominicbarnes/eslint-config-test": "^1.1.0",
+    "assert-element": "^0.3.1",
     "babel-cli": "^6.1.18",
     "babel-plugin-syntax-jsx": "^6.0.14",
     "babel-plugin-transform-react-jsx": "^6.0.18",
     "babel-preset-es2015": "^6.1.18",
+    "babelify": "^7.3.0",
+    "component-mock": "^0.1.0",
     "deku": "^1.0.0",
     "eslint": "^2.13.1",
+    "eslint-plugin-mocha": "^3.0.0",
     "eslint-plugin-react": "^4.3.0",
+    "isostring": "0.0.1",
     "mako-babel": "^0.13.4",
     "mako-browser": "^0.14.4",
     "mako-buffer": "^0.11.5",
     "mako-copy": "^0.12.4",
     "mako-output": "^0.11.4",
     "mako-serve": "^0.13.6",
-    "mako-stat": "^0.11.4"
+    "mako-stat": "^0.11.4",
+    "mocha": "^2.5.3",
+    "zuul": "^3.10.1"
   },
   "scripts": {
     "lint": "eslint .",
     "clean": "rm -rf lib example/build",
     "build": "babel src --source-maps inline --out-dir lib",
-    "test": "npm run lint",
-    "start": "npm run build && cd example && mako-serve",
-    "prepublish": "npm run build"
+    "pretest": "npm run lint",
+    "test": "zuul --phantom -- test/*.js",
+    "start": "zuul --local 7000 -- test/*.js",
+    "prepublish": "npm run build",
+    "example": "npm run build && cd example && mako-serve"
   }
 }
