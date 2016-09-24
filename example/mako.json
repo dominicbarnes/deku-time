@@ -1,11 +1,8 @@
 {
   "entries": [
-    "index.{html,js}"
+    "index.html"
   ],
   "plugins": [
-    [ "mako-stat", "html" ],
-    [ "mako-output", "html" ],
-    [ "mako-copy", "html" ],
     "mako-browser",
     "mako-babel"
   ]

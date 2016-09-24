@@ -1,0 +1,9 @@
+{
+  "root": "src",
+  "entries": [
+    "src/*.js"
+  ],
+  "plugins": [
+    [ "@dominicbarnes/mako-babel-precompile", { "output": "../lib" } ]
+  ]
+}
